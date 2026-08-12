@@ -281,7 +281,7 @@ async def post_chat(
     payload: dict[str, Any] = {
         "model": model,
         "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0,
+        "temperature": temperature,
     }
     response = await client.post(
         base_url.rstrip("/") + "/chat/completions",

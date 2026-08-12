@@ -208,7 +208,7 @@ def official_rubrics(item: dict[str, Any]) -> list[str] | list[dict[str, Any]] |
 
 
 async def post_chat(client: httpx.AsyncClient, *, base_url: str, api_key: str, model: str, messages: list[dict[str, str]], temperature: float | None) -> str:
-    payload: dict[str, Any] = {"model": model, "messages": messages, "temperature": 0}
+    payload: dict[str, Any] = {"model": model, "messages": messages, "temperature": temperature}
     response = await client.post(base_url.rstrip("/") + "/chat/completions", headers={"Authorization": f"Bearer {api_key}"}, json=payload)
     response.raise_for_status()
     return str(response.json()["choices"][0]["message"].get("content") or "").strip()

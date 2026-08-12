@@ -236,7 +236,7 @@ async def post_chat(
     messages: list[dict[str, str]],
     temperature: float | None,
 ) -> str:
-    payload: dict[str, Any] = {"model": model, "messages": messages, "temperature": 0}
+    payload: dict[str, Any] = {"model": model, "messages": messages, "temperature": temperature}
     response = await client.post(
         base_url.rstrip("/") + "/chat/completions",
         headers={"Authorization": f"Bearer {api_key}"},
