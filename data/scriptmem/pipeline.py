@@ -34,7 +34,7 @@ PREDICTION_FIELDS = ("predicted_answer", "prediction", "answer", "response")
 
 
 CHOICE_ANSWER_TEMPLATE = """
-You are asked to answer a multiple-choice question based on your memories of a conversation.
+You are asked to answer a multiple-choice question based on the retrieved memory context below.
 
 <instructions>
 1. Use only the provided memories. Prefer the memories that answer the question most directly.
@@ -52,13 +52,9 @@ You are asked to answer a multiple-choice question based on your memories of a c
 </instructions>
 
 <memories>
-Memories for user {{speaker_1_name}}:
+Retrieved memory context relevant to the question:
 
-{{speaker_1_memories}}
-
-Memories for user {{speaker_2_name}}:
-
-{{speaker_2_memories}}
+{{memories}}
 </memories>
 
 Question: {{question}}
@@ -81,11 +77,17 @@ def row_id(item: dict[str, Any], index: int) -> str:
 
 
 def render_answer_prompt(item: dict[str, Any]) -> str:
+    memories = "\n\n".join(
+        memory
+        for memory in (
+            str(item.get("speaker_1_memories", "")).strip(),
+            str(item.get("speaker_2_memories", "")).strip(),
+        )
+        if memory
+    )
+
     return (
-        CHOICE_ANSWER_TEMPLATE.replace("{{speaker_1_name}}", str(item.get("speaker_1_name", "speaker 1")))
-        .replace("{{speaker_1_memories}}", str(item.get("speaker_1_memories", "")))
-        .replace("{{speaker_2_name}}", str(item.get("speaker_2_name", "speaker 2")))
-        .replace("{{speaker_2_memories}}", str(item.get("speaker_2_memories", "")))
+        CHOICE_ANSWER_TEMPLATE.replace("{{memories}}", memories)
         .replace("{{question}}", str(item["question"]))
     )
 
