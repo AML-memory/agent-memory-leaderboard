@@ -6,7 +6,7 @@
 
 [Leaderboard](https://agentmemories.ai/leaderboard/industry/textual) | [2026 Challenge](https://agentmemories.ai/competition/) | [Submit a System](https://agentmemories.ai/evaluation) | [Documentation](https://agentmemories.ai/docs) | [API Guide](https://agentmemories.ai/api-guide)
 
-**English** | [简体中文](README_CN.md)
+**English** | [简体中文](./README_CN.md)
 
 </div>
 
