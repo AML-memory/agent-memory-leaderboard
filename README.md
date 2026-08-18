@@ -155,6 +155,7 @@ agent-memory-leaderboard/
 |   |-- longmemeval-s/
 |   |-- personamem/
 |   `-- scriptmem/
+|-- examples/           # Local inspection examples
 |-- api_config.py       # Shared public runtime configuration surface
 |-- requirements.txt    # Minimal Python dependency set
 |-- README.md           # English
@@ -164,6 +165,27 @@ agent-memory-leaderboard/
 The published modules make the public answer and scoring behavior inspectable.
 They are provided for transparency, methodological review, and alignment with
 reported leaderboard results.
+
+### Inspect a public evaluation config locally
+
+Install the minimal dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Then inspect one of the released public evaluation pipelines:
+
+```bash
+python examples/inspect_public_config.py
+```
+
+The example loads the public BEAM pipeline and prints the released model and
+scoring fields without running an evaluation, accessing benchmark data, or
+requiring credentials.
+
+This is an inspection-only example. It does not execute the production
+leaderboard service or change any scoring behavior.
 
 ### Deliberately not included
 

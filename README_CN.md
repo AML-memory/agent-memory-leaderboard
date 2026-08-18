@@ -118,6 +118,7 @@ agent-memory-leaderboard/
 |   |-- longmemeval-s/
 |   |-- personamem/
 |   `-- scriptmem/
+|-- examples/           # 本地检查示例
 |-- api_config.py       # 公共运行配置入口
 |-- requirements.txt    # 最小 Python 依赖
 |-- README.md           # English
@@ -125,6 +126,24 @@ agent-memory-leaderboard/
 ```
 
 仓库中的公开模块用于展示公共数据集对应的回答与评分行为，便于社区检查评测方法、复核公开结果并对齐评测口径。
+
+### 在本地检查公开评测配置
+
+安装最小依赖：
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+然后检查一个已发布的公开评测 pipeline：
+
+```bash
+python examples/inspect_public_config.py
+```
+
+该示例会加载公开的 BEAM pipeline，并输出已发布的模型与评分字段。整个过程不会运行正式评测、访问 benchmark 数据或要求任何凭据。
+
+该示例仅用于检查公开配置，不会运行线上 Leaderboard 服务，也不会修改任何评分行为。
 
 ### 明确不公开的内容
 
