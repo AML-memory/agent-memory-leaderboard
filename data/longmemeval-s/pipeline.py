@@ -169,11 +169,12 @@ async def answer(args: argparse.Namespace) -> None:
     items = rows(args.input)
     output = Path(args.output)
     done = {item.get("id") for item in rows(output)} if output.exists() else set()
-    async with httpx.AsyncClient(timeout=120) as client, output.open("a", encoding="utf-8") as handle:
-        for item in (item for item in items if item["id"] not in done):
-            generated = await complete(client, args, render_answer_prompt(item), args.max_tokens)
-            handle.write(json.dumps({"id": item["id"], "generated_answer": generated}, ensure_ascii=False) + "\n")
-            handle.flush()
+    async with httpx.AsyncClient(timeout=120) as client:
+        with output.open("a", encoding="utf-8") as handle:
+            for item in (item for item in items if item["id"] not in done):
+                generated = await complete(client, args, render_answer_prompt(item), args.max_tokens)
+                handle.write(json.dumps({"id": item["id"], "generated_answer": generated}, ensure_ascii=False) + "\n")
+                handle.flush()
 
 
 async def evaluate(args: argparse.Namespace) -> None:
@@ -185,13 +186,14 @@ async def evaluate(args: argparse.Namespace) -> None:
     if set(items) != set(answers):
         raise SystemExit("input/answer ID mismatch")
     output = Path(args.output)
-    async with httpx.AsyncClient(timeout=120) as client, output.open("w", encoding="utf-8") as handle:
-        for ident, item in items.items():
-            response = await complete(client, args, render_accuracy_prompt(item, answers[ident]), args.max_tokens)
-            label = parse_judge_label(response)
-            result = {"id": ident, "label": label, "is_correct": label == "CORRECT", "judge_response": response}
-            handle.write(json.dumps(result, ensure_ascii=False) + "\n")
-            handle.flush()
+    async with httpx.AsyncClient(timeout=120) as client:
+        with output.open("w", encoding="utf-8") as handle:
+            for ident, item in items.items():
+                response = await complete(client, args, render_accuracy_prompt(item, answers[ident]), args.max_tokens)
+                label = parse_judge_label(response)
+                result = {"id": ident, "label": label, "is_correct": label == "CORRECT", "judge_response": response}
+                handle.write(json.dumps(result, ensure_ascii=False) + "\n")
+                handle.flush()
 
 
 def parser() -> argparse.ArgumentParser:

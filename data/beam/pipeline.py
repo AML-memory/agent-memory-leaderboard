@@ -287,16 +287,17 @@ async def answer(args: argparse.Namespace) -> None:
     items = rows(args.input)
     output = Path(args.output)
     done = {item["id"] for item in rows(output)} if output.exists() else set()
-    async with httpx.AsyncClient(timeout=120) as client, output.open("a", encoding="utf-8") as handle:
-        for item in (item for item in items if item["id"] not in done):
-            generated = await call_model(
-                client,
-                args,
-                [{"role": "user", "content": render_answer_prompt(item)}],
-                args.max_tokens,
-            )
-            handle.write(json.dumps({"id": item["id"], "generated_answer": generated}, ensure_ascii=False) + "\n")
-            handle.flush()
+    async with httpx.AsyncClient(timeout=120) as client:
+        with output.open("a", encoding="utf-8") as handle:
+            for item in (item for item in items if item["id"] not in done):
+                generated = await call_model(
+                    client,
+                    args,
+                    [{"role": "user", "content": render_answer_prompt(item)}],
+                    args.max_tokens,
+                )
+                handle.write(json.dumps({"id": item["id"], "generated_answer": generated}, ensure_ascii=False) + "\n")
+                handle.flush()
 
 
 async def snippets_equivalent(
@@ -398,33 +399,34 @@ async def evaluate(args: argparse.Namespace) -> None:
         raise SystemExit("input/answer ID mismatch")
     output = Path(args.output)
     done = {item["id"] for item in rows(output) if "llm_judge_score" in item} if output.exists() else set()
-    async with httpx.AsyncClient(timeout=120) as client, output.open("a", encoding="utf-8") as handle:
-        for ident, item in ((ident, item) for ident, item in items.items() if ident not in done):
-            rubrics = rubric_items(item)
-            judge_response = await call_model(
-                client,
-                args,
-                [{"role": "user", "content": render_batch_judge_prompt(text(item["question"]), answers[ident], rubrics)}],
-                args.judge_max_tokens,
-                json_mode=True,
-            )
-            scores = parse_rubric_scores(judge_response, len(rubrics))
-            result = {
-                "id": ident,
-                "question_type": item.get("question_type", item.get("category")),
-                "judge_model": args.model,
-                "rubric_scores": [
-                    {"rubric": rubric, "score": score["score"], "reason": score["reason"]}
-                    for rubric, score in zip(rubrics, scores)
-                ],
-                "llm_judge_score": sum(score["score"] for score in scores) / len(scores),
-                "judge_response": judge_response,
-            }
-            if result["question_type"] == "event_ordering":
-                reference, system = await align_with_llm(client, args, rubrics, answers[ident].split("\n"))
-                result["event_ordering"] = event_ordering_metrics(reference, system)
-            handle.write(json.dumps(result, ensure_ascii=False) + "\n")
-            handle.flush()
+    async with httpx.AsyncClient(timeout=120) as client:
+        with output.open("a", encoding="utf-8") as handle:
+            for ident, item in ((ident, item) for ident, item in items.items() if ident not in done):
+                rubrics = rubric_items(item)
+                judge_response = await call_model(
+                    client,
+                    args,
+                    [{"role": "user", "content": render_batch_judge_prompt(text(item["question"]), answers[ident], rubrics)}],
+                    args.judge_max_tokens,
+                    json_mode=True,
+                )
+                scores = parse_rubric_scores(judge_response, len(rubrics))
+                result = {
+                    "id": ident,
+                    "question_type": item.get("question_type", item.get("category")),
+                    "judge_model": args.model,
+                    "rubric_scores": [
+                        {"rubric": rubric, "score": score["score"], "reason": score["reason"]}
+                        for rubric, score in zip(rubrics, scores)
+                    ],
+                    "llm_judge_score": sum(score["score"] for score in scores) / len(scores),
+                    "judge_response": judge_response,
+                }
+                if result["question_type"] == "event_ordering":
+                    reference, system = await align_with_llm(client, args, rubrics, answers[ident].split("\n"))
+                    result["event_ordering"] = event_ordering_metrics(reference, system)
+                handle.write(json.dumps(result, ensure_ascii=False) + "\n")
+                handle.flush()
 
 
 def parser() -> argparse.ArgumentParser:
