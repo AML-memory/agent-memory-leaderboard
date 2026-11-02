@@ -2,209 +2,177 @@
 
 # 🧠 Agent Memory Leaderboard
 
-**面向长期记忆系统的开放、统一、可复现评测平台**
+**开放、统一、可复现的长期记忆系统评测平台**
 
-[公开榜单](https://agentmemoryleaderboard.ai/leaderboard/industry/textual) | [2026 记忆挑战赛](https://agentmemoryleaderboard.ai/competition/) | [提交系统](https://agentmemoryleaderboard.ai/evaluation) | [平台文档](https://agentmemoryleaderboard.ai/docs) | [接口指南](https://agentmemoryleaderboard.ai/api-guide)
+[公开榜单](https://agentmemoryleaderboard.ai/leaderboard/industry/textual) | [2026 记忆挑战赛](https://agentmemoryleaderboard.ai/competition/) | [评测状态](https://agentmemoryleaderboard.ai/evaluation) | [平台文档](https://agentmemoryleaderboard.ai/docs) | [接口指南](https://agentmemoryleaderboard.ai/api-guide)
 
 [English](README.md) | **简体中文**
 
 </div>
 
-Agent Memory Leaderboard（AML）是一个面向长期记忆系统的开放评测平台，用于衡量记忆系统能否可靠地写入、检索并支持 Agent 使用长期信息。研究方法、开源项目与商业记忆服务可以通过同一套接入协议、版本化评测流程和公开榜单进行比较。
-
-AML 于 2026 年 7 月 29 日正式发布，由来自二十多所高校与研究机构的研究者共同发起。目前项目已进入持续运行的公开阶段：首期榜单已发布，首轮参评已收官，第二期也已排期。
-
-> **AML 已进入持续运行的公开阶段。** 首期榜单已经发布，Hugging Face 上的公开热度仍在，第二期挑战赛也已排上日程。
+Agent Memory Leaderboard（AML）是面向智能体长期记忆系统的公开评测平台，提供统一评测协议与公开榜单，评估文本记忆、代码记忆与多模态记忆能力。参评系统提供 **Add**（记忆写入）与 **Search**（记忆检索）接口；AML 平台统一完成回答生成或 Agent 执行、评分、结果复核与榜单发布。平台由来自二十余所高校与研究机构的研究者共同发起，支持开源方法与商业产品在同一赛道、同一评测契约下开展可复核的比较。
 
 ## 📰 最新动态
 
-- **2026 年 8 月 24 日** - 官方主页已明确首期收官，第二期预计于 2026 年 9 月 20 日开放。（[官网首页](https://agentmemoryleaderboard.ai/)，[赛事说明](https://agentmemoryleaderboard.ai/competition/)）
-- **2026 年 8 月 20 日前后** - AML 仍持续出现在 Hugging Face 的 Trending Spaces 页面前列，首发热度延续为持续社区关注。（[Hugging Face Trending](https://huggingface.co/spaces?sort=trending)，[HF 组织页](https://huggingface.co/agent-memory-leaderboard)）
-- **2026 年 8 月 12 日** - 首期公开榜单正式出炉。公开报道称，AML 在两天内进入 Hugging Face Trends 前十。（[赛事官网](https://agentmemoryleaderboard.ai/competition/)，[公开报道](https://joto.ai/blog/archive/2026081474308)）
+- **2026 年 11 月 4 日 — 第二届正式评测将于 23:59（北京时间）截止。已提交系统须保持 API 可用；平台将按官方安排处理排队任务、进行中的任务及异常重试。**
+- **2026 年 10 月 31 日** — 第二届材料提交截止。提交入口实际于 11 月 1 日 02:00（北京时间）关闭，赛事进入评测与复核阶段。
+- **2026 年 9 月 20 日** — 第二届 Agent 记忆挑战赛开放报名与评测，设置文本、代码和多模态三个赛道。
+
+## 🏆 第二届 Agent 记忆挑战赛 2026
+
+**第二届 Agent Memory Challenge 由中国图像图形学会（CSIG）主办，南京大学、浙江大学、Datawhale 与 CSIG 企业联络与标准化工作委员会承办**，依托 AML 统一评测平台开展。文本记忆、代码记忆与多模态记忆分别评测和排名，各赛道设置开源方法榜与商业产品榜。
+
+| 赛事节点 | 时间 / 状态 |
+| --- | --- |
+| 报名与评测开放 | 2026 年 9 月 20 日 00:00 |
+| 材料提交截止 | 2026 年 10 月 31 日 23:59；提交入口实际于 11 月 1 日 02:00 关闭 |
+| 正式评测截止 | 2026 年 11 月 4 日 23:59 |
+| **榜单发布** | **2026 年 11 月中旬** |
+| 奖金池 | 人民币 150,000 元；仅面向开源方法榜 |
+
+以上时间均为北京时间（UTC+8）。11 月 4 日正式评测截止后，平台将视实际情况，在随后约两天内尽可能完成排队任务、进行中的任务及异常重试。参赛方须在相关任务结束前保持 API 稳定可用，具体安排以官方通知为准。
+
+[赛事说明](https://agentmemoryleaderboard.ai/competition/) · [查看评测状态](https://agentmemoryleaderboard.ai/evaluation) · [参赛规则](https://agentmemoryleaderboard.ai/rules)
+
+## 🏅 第一届 Agent 记忆挑战赛 2026
+
+首届“记忆之巅·AML 挑战赛”（Agent Memory Challenge，AML Cycle 1）于 2026 年 7 月 29 日启动，首期榜单于同年 8 月 12 日发布。各组别主要结果如下：
+
+- **开源方法组：** [**InvMem**](https://github.com/wenxiaof345-ctrl/vanilla-rag-memory) 位居文本记忆榜首；[**aml-memory-mvp**](https://github.com/0xboyu/aml-memory-mvp)、[**causal-memory**](https://github.com/JingxuanC/causal-memory)、[**Memoria_v2**](https://github.com/lin-guan/aml-rag-v2)、[**nano-memory_chris**](https://github.com/himalalps/nano-memory) 等八个系统在代码记忆榜中并列第一。
+- **商业产品组：** [**MemoraX**](https://www.memoraxai.com/) 与 [**MemOS**](https://memos.openmem.net/) 在文本记忆榜和代码记忆榜中均位居前二，领衔首届 AML 榜单。
+
+以下列出开源方法组与商业产品组的前三名次。
+
+### 文本记忆
+
+![第一届文本记忆榜首系统](assets/textual-memory-cycle-1-winners.png)
+
+| 组别 | 🥇 第一名 | 🥈 第二名 | 🥉 第三名 |
+| --- | --- | --- | --- |
+| 开源方法 | [InvMem](https://github.com/wenxiaof345-ctrl/vanilla-rag-memory)（45.06） | [Refind](https://github.com/imlrz/ReFind)（44.97） | [ActiveMemoryIndex](https://github.com/linxuhao/ActiveMemoryIndex.git)（44.84） |
+| 商业产品 | [MemoraX v0.5](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/leaderboard_data.json)（58.02） | [MemOS v2.0.1](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/leaderboard_data.json)（45.89） | [NTES-MEMORY-SMART AML-Eval-SMART](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/leaderboard_data.json)（44.21） |
+
+### 代码记忆
+
+![第一届代码记忆榜首系统](assets/coding-memory-cycle-1-winners.png)
+
+| 组别 | 🥇 第一名 | 🥈 第二名 | 🥉 第三名 |
+| --- | --- | --- | --- |
+| 开源方法 | [AM-Link](https://github.com/Graygoo7529/AM-L)（52.67%）<br>[AMC-Memory](https://github.com/cxy935/AMC-Memo)（52.67%）<br>[aml-memory-baseline](https://github.com/richrichgo/aml-memory-ba)（52.67%）<br>[aml-memory-mvp](https://github.com/0xboyu/aml-memory-mvp)（52.67%）<br>[causal-memory](https://github.com/JingxuanC/causal-memory)（52.67%）<br>[Hybrid Episodic Memory](https://github.com/tlysanhuo/agent-memory-challenge)（52.67%）<br>[Memoria_v2](https://github.com/lin-guan/aml-rag-v2)（52.67%）<br>[nano-memory_chris](https://github.com/himalalps/nano-memory)（52.67%） | — | — |
+| 商业产品 | [MemoraX v0.5](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（62.00%） | [claude-mem v12.1.1](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（52.00%）<br>[hs v3](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（52.00%）<br>[MemOS v2.0.1](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（52.00%） | — |
 
 ## 🎯 为什么需要 AML
 
-现有记忆系统通常使用不同的数据集、回答模型、检索参数、评审方式和分数聚合规则。这样的结果可以用于各自研究内部的对比，却不一定适合直接横向比较不同系统。
+长期记忆系统常采用不同的数据集、回答模型、检索参数和评分方法，研究结论与产品成绩因而难以直接横向比较。AML 通过固定数据版本、作答与评分链路、检索限制及聚合规则，在统一评测契约下比较系统表现。
 
-AML 围绕三个目标设计：
+- **覆盖多类场景：** 评估长对话、跨会话交互、代码工程与图文信息中的长期记忆能力。
+- **统一比较条件：** 控制影响结果的下游变量，支持同一契约下的可比评测。
+- **提供能力诊断：** 同时报告总分、赛道分项与能力维度表现，揭示系统优势和失效模式。
 
-1. **覆盖全面。** 在多种数据集、上下文长度、交互模式和应用场景中评估记忆能力。
-2. **条件统一。** 固定回答和评审链路，使成绩差异尽可能来自记忆系统本身。
-3. **结果可解释。** 除总分外提供分能力表现，帮助定位系统的优势、短板与失败原因。
+## 🧩 AML 评测什么
 
-## 📊 评测范围
+第二届评测覆盖以下三个独立赛道。各赛道分别固定数据、执行流程与评分规则。
 
-| 赛道 | 主要评估内容 | 当前覆盖 |
-| --- | --- | --- |
-| **文本记忆** | 长对话、跨会话历史、个性化偏好、规则执行、时序事件、超长上下文和连续叙事 | 10 余个评测数据集，超过 1,500 个对话与任务样本，近 5,000 道评测题目 |
-| **代码记忆** | Agent 能否从同一代码仓库的历史工程记录中检索、筛选并复用有效经验 | 12 个代码仓库、150 个基础软件工程任务，以及 1,290 个带有时间约束和细粒度相关性标注的历史任务 |
+| 赛道 | 评估内容 | 评测规模 | 评测契约 |
+| --- | --- | --- | --- |
+| **文本记忆** | 事实召回、多跳关系、时间事件、记忆治理、个性化、规则执行与安全隐私 | 6,000 余个评测实例；32 个数据来源；约 300M tokens | `textual-v1` / `ldbd-textual-official-suite-v1` |
+| **代码记忆** | 同一代码仓库中历史工程经验的检索、筛选与复用 | 300 个评测实例；2 类数据类型；约 1.8B tokens | `coding-v1` / `cambench-coding-relevant-noisy-300-v1` |
+| **多模态记忆** | 图文记忆的写入、跨模态检索与证据使用 | 近 5,000 个评测实例；7 个数据来源；约 800M tokens | `multimodal-v2` / `ldbd-multimodal-suite-v2` |
 
-文本记忆套件包括 PersonaMem、LoCoMo-Refined、CLBench、BEAM、LongMemEval 和 ScriptMem 等基准。代码记忆数据集目前作为暂未公开的数据赛道运行，本仓库不会发布私有任务、验证材料或受保护标注。
+## 📚 AML 如何评测
 
-上述统计对应当前赛事使用的评测套件，后续可能随榜单版本更新而调整。
-
-## 🧩 AML 评估什么
-
-AML 将不同来源题目重新映射到统一的能力体系，使结果不仅能按数据集比较，也能按具体记忆能力进行分析。
-
-### 文本记忆能力
-
-| 能力维度 | 核心问题 |
-| --- | --- |
-| 显式事实召回 | 系统能否检索到问题所需的明确事实？ |
-| 关系与多跳组合 | 系统能否连接分散在多条记忆中的证据？ |
-| 时间与事件理解 | 系统能否判断事件顺序、状态变化和最新有效信息？ |
-| 记忆治理 | 系统能否长期正确地更新、保留和使用记忆？ |
-| 个性化与关怀 | 系统能否持续保留偏好、身份与用户相关上下文？ |
-| 规则与流程执行 | 系统能否记住并遵循既定约束和操作流程？ |
-| 认识论安全与隐私 | 系统能否守住证据、确定性和敏感信息边界？ |
-
-### 代码记忆能力
-
-- **Debug Memory：** 检索历史诊断信息、修复策略与验证流程，加速解决相似问题。
-- **Development Memory：** 利用历史架构决策与既有工程模式，指导新功能实现。
-
-## ⚙️ 统一评测协议
-
-参评系统只需要提供两类记忆操作：
-
-- **Add：** 将对话、事件、文档或工程历史写入记忆系统。
-- **Search：** 在指定查询与作用域下返回相关记忆证据。
-
-回答生成、结果评审、分数聚合和任务编排由平台统一完成。每条可比较成绩都绑定一份版本化评测契约，其中记录所用数据版本、评测流程版本、模型配置和评分规则。
-
-这种职责划分让参评方专注于记忆能力，同时由 AML 固定影响结果的下游条件。
-
-### 评测流程
+参赛系统提供 **Add**（记忆写入）与 **Search**（记忆检索）接口；平台统一完成回答生成或 Agent 执行、评分、结果复核与榜单发布。正式评测受理后，系统版本、接口配置、评测契约与计分参数固定，确保结果可追溯。
 
 ```text
-申请 AML Key
-      |
-提供 Add 和 Search 接口
-      |
-通过兼容性 Smoke 测试
-      |
-运行完整评测套件
-      |
-复核并发布结果
+参赛系统 Add / Search → 平台 Answer / Agent → Evaluation / Verifier → 私有结果 → 复核 → 公开榜单
 ```
 
-正式评测结果默认保持私有，只有完整评测成功且通过榜单复核后才会公开。公榜成绩与明确的系统版本和评测契约绑定，后续更新也可以持续追踪。
+### 文本记忆
 
-## 🚀 参与评测
+普通文本任务按 Add → Search → Answer → Evaluation 执行；流式任务按事件顺序持续写入和查询，Add 与 Search 可以交错。Search 默认 `top_k=100`。在 128,000 token 上下文窗口下，扣除 8,192 token 输出空间与 2,048 token 安全余量后，输入预算为 117,760 tokens；超出预算的检索内容按排序从末尾裁剪，原始响应保留归档。
 
-AML 设置两个独立榜单类别：
+### 代码记忆
 
-| 类别 | 适用对象 | 提交要求 |
-| --- | --- | --- |
-| **开源方法** | 研究团队与开源项目维护者 | 公开代码、配置、原始工作署名与复现材料 |
-| **商业产品** | 在线记忆产品与 API 服务商 | 提供稳定的 Add/Search 服务，内部实现可以保持私有 |
+一次正式评测包含 150 个基础软件工程任务，每个任务分别在相关历史（`relevant`）与含干扰历史（`noisy`）条件下执行，共 300 个任务—条件评测单元。参赛方提供 Add / Search 接口，平台提供解题 Agent 与验证器。Search 默认 `top_k=100`，上限为 1,000，Agent 可在任务过程中多次检索。
 
-提交系统的基本流程如下：
+### 多模态记忆
 
-1. 阅读[赛事规则](https://agentmemoryleaderboard.ai/rules)与[接口指南](https://agentmemoryleaderboard.ai/api-guide)。
-2. 实现可由平台访问的 Add 和 Search 接口。
-3. 提交[评测权限申请](https://agentmemoryleaderboard.ai/evaluation)。
-4. 使用审核后获得的 AML Key 运行不计分的兼容性 Smoke 测试。
-5. 发起完整评测并在个人页面查看私有结果。
-6. 提交复核，通过后进入对应公开榜单。
+平台按固定配置发送原图与图像描述（caption）。系统可处理原图或使用同一请求中的图像描述，但须支持有序图文内容数组，并如实声明实际处理的媒体类型。Search 可返回文本或图文证据，图片证据由平台传入多模态回答链路。
 
-参赛方负责自身记忆 API、存储、带宽和计算成本；AML 负责回答、评审、评测编排与榜单基础设施。
+### 可复现性与结果完整性
 
-## 仓库定位
+- 只有完整且评测契约一致的结果可直接比较；影响得分的变更须升级契约版本。
+- 正式样本纳入固定计分分母；错误答案、未解决任务、合法空检索及协议允许的弃答按相应基准规则计分。
+- 漏执行、产物缺失、重复样本及数据源缺失均属于执行完整性问题，不得以跳题、缩小分母或补零代替处理。
+- 回答模型与解题 Agent 不接收标准答案；标准答案及评分量表仅用于最终评分或验证。
+- 禁止样本识别与预制答案、提示词注入、数据泄漏、跨用户检索及外部答案源等规避评测的行为。
+- 评测数据与过程产物仅用于本次评测及必要审核，并按规定期限删除。
 
-本仓库是 AML 的**公开评测发布仓库**，不是生产榜单服务的完整副本，也不包含评测数据。
+评测配额、恢复机制与审核要求详见[参赛规则](https://agentmemoryleaderboard.ai/rules)。
+
+## ❓ 常见问题（FAQ）
+
+### 如何接入 AML？
+
+参评方须自行部署 Add / Search API，按[接口指南](https://agentmemoryleaderboard.ai/api-guide)提交固定系统版本、接口配置与所需材料，并按当期规则完成 Smoke 接入验证、Full 正式评测及复核。平台统一完成回答生成或 Agent 执行与评分；申请时间和开放状态以当期[参赛规则](https://agentmemoryleaderboard.ai/rules)为准。
+
+### AML 是否支持多模态记忆评测？
+
+支持。第二届设有独立的多模态记忆赛道，评估图文记忆写入、跨模态检索与证据使用。平台按固定配置提供原图及图像描述（caption），参评系统须如实声明实际处理的媒体类型。详见[第二届赛事说明](https://agentmemoryleaderboard.ai/competition/)与[接口指南](https://agentmemoryleaderboard.ai/api-guide)。
+
+### 不同届次或赛道的成绩能直接比较吗？
+
+只有结果完整且数据、模型、检索限制、计分与聚合规则等评测契约一致时，成绩才可直接比较。两届得分不能仅凭百分比直接比较。文本、代码与多模态也分别排名，不合并为跨赛道总榜。参见[首届代码榜存档](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)与[参赛规则](https://agentmemoryleaderboard.ai/rules)。
+
+### AML 榜单背后包含哪些数据集？
+
+AML 的评测数据由公开基准与平台自建数据集共同组成。文本记忆赛道涵盖 [BEAM](https://github.com/mohammadtavakoli78/BEAM)、[PersonaMem-v2](https://github.com/bowen-upenn/PersonaMem-v2) 等数据集；代码记忆赛道主要采用平台自行构造的评测任务与样本问题；多模态记忆赛道包含 [MemEye](https://github.com/MinghoKwok/MemEye) 等数据集。此外，平台还基于公开语料或现有基准自行构造评测题目，形成不对外公开的私有评测集。这些私有评测集有助于减少针对已知题目的定向优化与过拟合，降低题目和答案泄漏风险，是维护平台评测公平性与结果可信度的重要保障。
+
+## 📁 仓库定位
+
+本仓库发布 AML 的公开评测实现与说明，供社区检查回答与评分行为、复核评测方法并对齐评测口径。
 
 ```text
 agent-memory-leaderboard/
-|-- data/               # 按数据集划分的公开评测契约
-|   |-- beam/
-|   |-- clbench/
-|   |-- locomo-refined/
-|   |-- longmemeval-s/
-|   |-- personamem/
-|   `-- scriptmem/
-|-- api_config.py       # 公共运行配置入口
-|-- requirements.txt    # 最小 Python 依赖
-|-- README.md           # English
-`-- README_CN.md        # 简体中文
+├── assets/
+├── data/
+│   ├── beam/
+│   ├── clbench/
+│   ├── locomo-refined/
+│   ├── longmemeval-s/
+│   ├── personamem/
+│   └── scriptmem/
+├── api_config.py
+├── requirements.txt
+├── README.md
+└── README_CN.md
 ```
 
-仓库中的公开模块用于展示公共数据集对应的回答与评分行为，便于社区检查评测方法、复核公开结果并对齐评测口径。
+为保护评测完整性与参评者隐私，仓库不公开评测数据原文、保留题目、标准答案、评分量表、私有标注、参评系统运行产物、服务凭据及内部基础设施。请勿在 Issue 或 Pull Request 中提交上述材料。
 
-### 明确不公开的内容
+## 🤝 参与贡献
 
-为保护评测完整性与参评者隐私，本仓库不会包含：
+欢迎改进公开文档、澄清评测契约，或提出来源清晰、难度合理、能够补充现有能力覆盖的基准。贡献须保留原始作者署名与许可信息，不得包含私有评测数据、参评者信息、凭据或商业系统内部资料。影响评分的变更应以新契约版本发布。
 
-- 数据集原文、保留题目、标准答案、评分量表或私有标注；
-- 参评系统提交内容、检索记忆、模型输出、日志或运行产物；
-- 服务凭据、模型密钥、参评 API Key 或部署密钥；
-- 内部任务编排、管理后台、基础设施和复核工具；
-- 暂未发布的评测数据、实现与验证材料。
+贡献方式详见[平台文档](https://agentmemoryleaderboard.ai/docs)。
 
-请勿在 Issue 或 Pull Request 中提交上述内容。
+## 📚 引用
 
-## 🔒 可复现性与结果完整性
-
-- 只有数据版本与完整评测契约一致的成绩才能直接比较。
-- 服务地址和凭据必须从外部提供，本仓库不附带任何密钥。
-- 公榜成绩统一使用 0-100 分；不同数据集在归一化前可能保留各自的原始指标范围。
-- 上游数据集和评测适配代码仍受各自许可协议与使用条款约束。
-- 只有成功完成并通过复核的完整评测可以进入公榜；Smoke、部分评测、失败任务和未完成任务不会成为公开成绩。
-
-
-
-## 🏆 首届 Agent 记忆挑战赛 2026
-
-首届 Agent 记忆挑战赛于 2026 年 7 月 29 日启动，目前已经从发布期进入公榜运行阶段，面向全球研究者、开源项目维护者和商业记忆团队持续开放后续评测周期。
-
-| 赛事节点 | 日期 |
-| --- | --- |
-| 开放报名 | 2026 年 7 月 29 日 |
-| 提交截止 | 2026 年 8 月 7 日 |
-| 首期榜单发布 | 2026 年 8 月 12 日 |
-
-本届赛事分别设置开源方法榜单与商业产品榜单。会员奖励、API 额度、社区贡献计划及日程调整以[赛事官网规则](https://agentmemoryleaderboard.ai/competition/)为准。
-
-首期参评已经结束，第二期预计于 2026 年 9 月 20 日开放。AML 仍将长期运行，并通过后续榜单版本与赛事周期持续接收新系统、新版本和具有互补价值的 Benchmark 提案。
-
-## 参与贡献
-
-我们欢迎以下贡献：改进公开文档、澄清已公开的评测契约，或提交具有明确来源、合理难度且能补充现有能力覆盖的新 Benchmark 提案。
-
-提交贡献前请确认：
-
-1. 不包含私有评测轨迹、参评者数据、凭据或商业系统内部信息。
-2. 保留上游工作的作者署名和许可信息。
-3. 明确说明改动是否影响评分，还是仅修改文档。
-4. 任何影响评分的改动都应发布为新的评测契约版本，不能静默改变已有成绩的含义。
-
-Benchmark 提交方式与当前贡献要求请查看[平台文档](https://agentmemoryleaderboard.ai/docs)。
-
-## 引用
-
-如果 AML 对你的研究或评测工作有所帮助，欢迎引用本项目：
+如 AML 对您的研究或评测工作有所帮助，欢迎引用：
 
 ```bibtex
 @misc{agent_memory_leaderboard_2026,
   title        = {Agent Memory Leaderboard: Open and Reproducible Evaluation for Long-Term Memory Systems},
   author       = {{Agent Memory Leaderboard Organizers}},
   year         = {2026},
-  howpublished = {\url{https://agentmemoryleaderboard.ai/}},
-  note         = {Accessed: YYYY-MM-DD}
+  howpublished = {\url{https://agentmemoryleaderboard.ai/}}
 }
 ```
 
-## 链接与联系方式
+## 🔗 链接与联系方式
 
 - 官网：[agentmemoryleaderboard.ai](https://agentmemoryleaderboard.ai/)
-- 公开榜单：[文本记忆榜单](https://agentmemoryleaderboard.ai/leaderboard/industry/textual)
-- 赛事页面：[Agent 记忆挑战赛 2026](https://agentmemoryleaderboard.ai/competition/)
-- 提交评测：[评测权限申请](https://agentmemoryleaderboard.ai/evaluation)
-- 平台说明：[文档中心](https://agentmemoryleaderboard.ai/docs)
-- 接口说明：[Add/Search 接口指南](https://agentmemoryleaderboard.ai/api-guide)
-
-
----
-
-记忆系统需要一套覆盖充分、条件统一、结果可信的度量标准。AML 希望让这套标准成为社区可以共同检查、持续更新并长期使用的开放基础设施。
+- 第一届挑战赛结果：[Hugging Face 榜单存档](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard)
+- 第二届挑战赛：[赛事说明与赛程](https://agentmemoryleaderboard.ai/competition/)
+- CSIG 第二届挑战赛官方通知：[Agent Memory Challenge Agent 记忆公开挑战赛即将启动](https://mp.weixin.qq.com/s/y_8a6fcx4bzYvJ5e05qSow)
+- 咨询邮箱：[contactus@agentmemoryleaderboard.ai](mailto:contactus@agentmemoryleaderboard.ai)
