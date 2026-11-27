@@ -14,25 +14,63 @@ Agent Memory Leaderboard（AML）是面向智能体长期记忆系统的公开�
 
 ## 📰 最新动态
 
-- **2026 年 11 月 4 日 — 第二届正式评测将于 23:59（北京时间）截止。已提交系统须保持 API 可用；平台将按官方安排处理排队任务、进行中的任务及异常重试。**
+- **2026 年 11 月 19 日** — 第二届 Agent 记忆挑战赛最终榜单正式发布，公布文本、代码和多模态三个赛道的开源方法组、闭源方法组与商业产品组获奖结果。
+- **2026 年 11 月 4 日** — 第二届正式评测于 23:59（北京时间）截止。
 - **2026 年 10 月 31 日** — 第二届材料提交截止。提交入口实际于 11 月 1 日 02:00（北京时间）关闭，赛事进入评测与复核阶段。
 - **2026 年 9 月 20 日** — 第二届 Agent 记忆挑战赛开放报名与评测，设置文本、代码和多模态三个赛道。
 
 ## 🏆 第二届 Agent 记忆挑战赛 2026
 
-**第二届 Agent Memory Challenge 由中国图像图形学会（CSIG）主办，南京大学、浙江大学、Datawhale 与 CSIG 企业联络与标准化工作委员会承办**，依托 AML 统一评测平台开展。文本记忆、代码记忆与多模态记忆分别评测和排名，各赛道设置开源方法榜与商业产品榜。
+第二届“记忆之巅·AML 挑战赛”（Agent Memory Challenge，AML Cycle 2）于 **2026 年 9 月 20 日正式启动，11 月 19 日公布最终榜单**。本届赛事由中国图像图形学会（CSIG）主办，南京大学、浙江大学、Datawhale 及 CSIG 企业联络与标准化工作委员会承办，依托 AML 统一评测平台开展。本届在延续文本记忆和代码记忆两大赛道的基础上，新增多模态记忆赛道。**各组别主要结果如下：**
 
-| 赛事节点 | 时间 / 状态 |
-| --- | --- |
-| 报名与评测开放 | 2026 年 9 月 20 日 00:00 |
-| 材料提交截止 | 2026 年 10 月 31 日 23:59；提交入口实际于 11 月 1 日 02:00 关闭 |
-| 正式评测截止 | 2026 年 11 月 4 日 23:59 |
-| **榜单发布** | **2026 年 11 月中旬** |
-| 奖金池 | 人民币 150,000 元；仅面向开源方法榜 |
+- **开源方法组：**[Resurface](https://github.com/lilysttail/Resurface)（61.22）位居文本记忆榜首，[InsightMem](https://github.com/Kline-song/InsightMem)（63.33%）获得代码记忆榜第一名，[Khipu（结绳）](https://github.com/Lv999APTITUDE/khipu)（43.26）夺得多模态记忆冠军。
+- **闭源方法榜**：[MemoraX](https://www.memoraxai.com/) 在三大赛道均位居榜首；阿里云 DMS 团队的 [AIDBS-Groundata](https://aidbs.console.aliyun.com/)（64.32）、海致星图团队的 [atlas-harness](https://haizhi.com/)（63.00%）和灵心纪元团队的 LinkMem（49.85）分别在文本、代码和多模态记忆赛道紧随其后。
 
-以上时间均为北京时间（UTC+8）。11 月 4 日正式评测截止后，平台将视实际情况，在随后约两天内尽可能完成排队任务、进行中的任务及异常重试。参赛方须在相关任务结束前保持 API 稳定可用，具体安排以官方通知为准。
+- **商业产品组：**[MemoraX](https://www.memoraxai.com/) 以文本记忆 69.26、代码记忆 68.00%、多模态记忆 53.68 的成绩，包揽 AML 第二届挑战赛三大赛道商业产品榜第一名；来自阿里云 DMS 团队的 [AIDBS-Groundata](https://aidbs.console.aliyun.com/)、GEDO PTE. LTD. 团队的 [Gedo Memory](https://gedo.ai/)、海致星图团队的 [atlas-harness](https://haizhi.com/) 以及 Shopee 团队的 memorysum-vl 等系统也在不同赛道中取得了领先成绩。
 
-[赛事说明](https://agentmemoryleaderboard.ai/competition/) · [查看评测状态](https://agentmemoryleaderboard.ai/evaluation) · [参赛规则](https://agentmemoryleaderboard.ai/rules)
+以下列出开源方法组、闭源方法组与商业产品组的前三名次。
+
+### 文本记忆
+
+<p align="center">
+  <img src="assets/textual-memory-cycle-2-open-source.png" alt="文本记忆开源方法榜冠军 · Resurface" width="32%">
+  <img src="assets/textual-memory-cycle-2-closed-source.png" alt="文本记忆闭源方法榜冠军 · MemoraX" width="32%">
+  <img src="assets/textual-memory-cycle-2-commercial.png" alt="文本记忆商业产品榜冠军 · MemoraX" width="32%">
+</p>
+
+| 组别 | 🥇 第一名 | 🥈 第二名 | 🥉 第三名 |
+| --- | --- | --- | --- |
+| 开源方法 | [Resurface](https://github.com/lilysttail/Resurface)（61.22） | [mnemotree](https://github.com/kurcontko/mnemotree)（60.81） | [starwingMem](https://github.com/seuclkzsd/starwingMem)（60.56） |
+| 闭源方法 | [MemoraX](https://www.memoraxai.com/)（69.26） | [AIDBS-Groundata](https://aidbs.console.aliyun.com/)（64.32） | MemFoundry（63.65） |
+| 商业产品 | [MemoraX](https://www.memoraxai.com/)（69.26） | [AIDBS-Groundata](https://aidbs.console.aliyun.com/)（64.32） | [Gedo Memory](https://gedo.ai/)（62.28） |
+
+### 代码记忆
+
+<p align="center">
+  <img src="assets/coding-memory-cycle-2-open-source.png" alt="代码记忆开源方法榜冠军 · InsightMem" width="32%">
+  <img src="assets/coding-memory-cycle-2-closed-source.png" alt="代码记忆闭源方法榜冠军 · MemoraX" width="32%">
+  <img src="assets/coding-memory-cycle-2-commercial.png" alt="代码记忆商业产品榜冠军 · MemoraX" width="32%">
+</p>
+
+| 组别 | 🥇 第一名 | 🥈 第二名 | 🥉 第三名 |
+| --- | --- | --- | --- |
+| 开源方法 | [InsightMem](https://github.com/Kline-song/InsightMem)（63.33%） | [Aranea-Agents Memory](https://github.com/AmarsDing/aranea-agents)（62.00%） | [ZfaiOpen](https://github.com/ZfaiOpen/ZfaiOpen)（61.00%） |
+| 闭源方法 | [MemoraX](https://www.memoraxai.com/)（68.00%） | [atlas-harness](https://haizhi.com/)（63.00%） | Mem-Pro（62.67%） |
+| 商业产品 | [MemoraX](https://www.memoraxai.com/)（68.00%） | [atlas-harness](https://haizhi.com/)（63.00%） | [太一连山](https://gga.chat/)（59.00%） |
+
+### 多模态记忆
+
+<p align="center">
+  <img src="assets/multimodal-memory-cycle-2-open-source.png" alt="多模态记忆开源方法榜冠军 · Khipu(结绳)" width="32%">
+  <img src="assets/multimodal-memory-cycle-2-closed-source.png" alt="多模态记忆闭源方法榜冠军 · MemoraX" width="32%">
+  <img src="assets/multimodal-memory-cycle-2-commercial.png" alt="多模态记忆商业产品榜冠军 · MemoraX" width="32%">
+</p>
+
+| 组别 | 🥇 第一名 | 🥈 第二名 | 🥉 第三名 |
+| --- | --- | --- | --- |
+| 开源方法 | [Khipu（结绳）](https://github.com/Lv999APTITUDE/khipu)（43.26） | [starwingMem](https://github.com/seuclkzsd/starwingMem)（42.62） | [Multimodal-RAW-RAG-AML](https://github.com/tujiahuanyu/Multimodal-raw-rag-aml)（42.17） |
+| 闭源方法 | [MemoraX](https://www.memoraxai.com/)（53.68） | LinkMem（49.85） | memorysum-vl（42.35） |
+| 商业产品 | [MemoraX](https://www.memoraxai.com/)（53.68） | memorysum-vl（42.35） | [MemBraince](https://membraince.com/)（36.60） |
 
 ## 🏅 第一届 Agent 记忆挑战赛 2026
 
@@ -58,7 +96,7 @@ Agent Memory Leaderboard（AML）是面向智能体长期记忆系统的公开�
 
 | 组别 | 🥇 第一名 | 🥈 第二名 | 🥉 第三名 |
 | --- | --- | --- | --- |
-| 开源方法 | [AM-Link](https://github.com/Graygoo7529/AM-L)（52.67%）<br>[AMC-Memory](https://github.com/cxy935/AMC-Memo)（52.67%）<br>[aml-memory-baseline](https://github.com/richrichgo/aml-memory-ba)（52.67%）<br>[aml-memory-mvp](https://github.com/0xboyu/aml-memory-mvp)（52.67%）<br>[causal-memory](https://github.com/JingxuanC/causal-memory)（52.67%）<br>[Hybrid Episodic Memory](https://github.com/tlysanhuo/agent-memory-challenge)（52.67%）<br>[Memoria_v2](https://github.com/lin-guan/aml-rag-v2)（52.67%）<br>[nano-memory_chris](https://github.com/himalalps/nano-memory)（52.67%） | — | — |
+| 开源方法 | [AM-Link](https://github.com/Graygoo7529/AM-Link)（52.67%）<br>[AMC-Memory](https://github.com/cxy935/AMC-Memory)（52.67%）<br>[aml-memory-baseline](https://github.com/richrichgo/aml-memory-baseline)（52.67%）<br>[aml-memory-mvp](https://github.com/0xboyu/aml-memory-mvp)（52.67%）<br>[causal-memory](https://github.com/JingxuanC/causal-memory)（52.67%）<br>[Hybrid Episodic Memory](https://github.com/tlysanhuo/agent-memory-challenge)（52.67%）<br>[Memoria_v2](https://github.com/lin-guan/aml-rag-v2)（52.67%）<br>[nano-memory_chris](https://github.com/himalalps/nano-memory)（52.67%） | — | — |
 | 商业产品 | [MemoraX v0.5](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（62.00%） | [claude-mem v12.1.1](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（52.00%）<br>[hs v3](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（52.00%）<br>[MemOS v2.0.1](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json)（52.00%） | — |
 
 ## 🎯 为什么需要 AML
