@@ -14,25 +14,63 @@ Agent Memory Leaderboard (AML) is a public evaluation platform for long-term age
 
 ## 📰 Latest Updates
 
-- **November 4, 2026 — Cycle 2 formal evaluation closes at 23:59 (Beijing time). APIs for submitted systems must remain available. The platform will process queued and ongoing jobs and retries following errors according to official arrangements.**
+- **November 19, 2026** — AML published the final Cycle 2 rankings for Open-source Methods, Closed-source Methods, and Commercial Products across the Textual, Coding, and Multimodal Memory tracks.
+- **November 4, 2026** — Formal evaluation closed at 23:59 (Beijing time).
 - **October 31, 2026** — The Cycle 2 submission deadline has passed. The submission portal closed at 02:00 on November 1 (Beijing time), and the challenge has entered the evaluation and review phase.
 - **September 20, 2026** — The second Agent Memory Challenge opened for registration and evaluation, with Textual, Coding, and Multimodal Memory tracks.
 
 ## 🏆 Second Agent Memory Challenge 2026
 
-**The second Agent Memory Challenge is organized by the China Society of Image and Graphics (CSIG) and co-organized by Nanjing University, Zhejiang University, Datawhale, and the CSIG Committee for Enterprise Liaison and Standardization.** AML provides the unified evaluation platform. Textual, Coding, and Multimodal Memory are evaluated and ranked separately, with Open-source Methods and Commercial Products divisions in each track.
+The second Agent Memory Challenge (AML Cycle 2) officially opened on **September 20, 2026, with the final leaderboard released on November 19, 2026**. The competition was hosted by the China Society of Image and Graphics (CSIG), with Nanjing University, Zhejiang University, Datawhale, and the CSIG Enterprise Liaison and Standardization Working Committee serving as co-organizers. It was conducted through the unified evaluation platform of Agent Memory Leaderboard (AML). Building on the Textual Memory and Coding Memory tracks from the first edition, this cycle introduced a new Multimodal Memory track. **The main results are summarized as follows:**
 
-| Milestone | Date / Status |
-| --- | --- |
-| Registration and evaluation opened | September 20, 2026 · 00:00 |
-| Materials submission deadline | October 31, 2026 · 23:59; the portal closed on November 1 at 02:00 |
-| Formal evaluation closes | November 4, 2026 · 23:59 |
-| **Official leaderboard release** | **Mid-November 2026** |
-| Prize pool | US$22,000; Open-source Methods division only |
+- **Open-source Methods:** [Resurface](https://github.com/lilysttail/Resurface) (61.22) ranked first in Textual Memory, [InsightMem](https://github.com/Kline-song/InsightMem) (63.33%) topped Coding Memory, and [Khipu (结绳)](https://github.com/Lv999APTITUDE/khipu) (43.26) took first place in Multimodal Memory.
+- **Closed-source Methods:** [MemoraX](https://www.memoraxai.com/) ranked first across all three tracks. [AIDBS-Groundata](https://aidbs.console.aliyun.com/) (64.32), [atlas-harness](https://haizhi.com/) (63.00%), and LinkMem (49.85) followed in Textual, Coding, and Multimodal Memory, respectively.
 
-All times are Beijing time (UTC+8). After formal evaluation closes on November 4, the platform will aim to complete queued and ongoing jobs, along with retries following errors, over approximately the next two days, subject to operating conditions. Participants must keep their APIs stable and available until their jobs finish. Final arrangements are subject to official notices.
+- **Commercial Products:** [MemoraX](https://www.memoraxai.com/) swept all three tracks, achieving scores of 69.26 in Textual Memory, 68.00% in Coding Memory, and 53.68 in Multimodal Memory. Other products, including [AIDBS-Groundata](https://aidbs.console.aliyun.com/), [Gedo Memory](https://gedo.ai/), [atlas-harness](https://haizhi.com/), Taiyi Lianshan, memorysum-vl, and [MemBraince](https://membraince.com/), also ranked among the top three in their respective tracks.
 
-[Challenge Details](https://agentmemoryleaderboard.ai/competition/) · [Evaluation Status](https://agentmemoryleaderboard.ai/evaluation) · [Participation Rules](https://agentmemoryleaderboard.ai/rules)
+The following tables present the top three entries in the Open-source Methods, Closed-source Methods, and Commercial Products leaderboards.
+
+### Textual Memory
+
+<p align="center">
+  <img src="assets/textual-memory-cycle-2-open-source.png" alt="Textual Memory, open-source winner · Resurface" width="32%">
+  <img src="assets/textual-memory-cycle-2-closed-source.png" alt="Textual Memory, closed-source winner · MemoraX" width="32%">
+  <img src="assets/textual-memory-cycle-2-commercial.png" alt="Textual Memory, commercial winner · MemoraX" width="32%">
+</p>
+
+| Leaderboard | 🥇 First Place | 🥈 Second Place | 🥉 Third Place |
+| --- | --- | --- | --- |
+| Open-source Methods | [Resurface](https://github.com/lilysttail/Resurface) (61.22) | [mnemotree](https://github.com/kurcontko/mnemotree) (60.81) | [starwingMem](https://github.com/seuclkzsd/starwingMem) (60.56) |
+| Closed-source Methods | [MemoraX](https://www.memoraxai.com/) (69.26) | [AIDBS-Groundata](https://aidbs.console.aliyun.com/) (64.32) | MemFoundry (63.65) |
+| Commercial Products | [MemoraX](https://www.memoraxai.com/) (69.26) | [AIDBS-Groundata](https://aidbs.console.aliyun.com/) (64.32) | [Gedo Memory](https://gedo.ai/) (62.28) |
+
+### Coding Memory
+
+<p align="center">
+  <img src="assets/coding-memory-cycle-2-open-source.png" alt="Coding Memory, open-source winner · InsightMem" width="32%">
+  <img src="assets/coding-memory-cycle-2-closed-source.png" alt="Coding Memory, closed-source winner · MemoraX" width="32%">
+  <img src="assets/coding-memory-cycle-2-commercial.png" alt="Coding Memory, commercial winner · MemoraX" width="32%">
+</p>
+
+| Leaderboard | 🥇 First Place | 🥈 Second Place | 🥉 Third Place |
+| --- | --- | --- | --- |
+| Open-source Methods | [InsightMem](https://github.com/Kline-song/InsightMem) (63.33%) | [Aranea-Agents Memory](https://github.com/AmarsDing/aranea-agents) (62.00%) | [ZfaiOpen](https://github.com/ZfaiOpen/ZfaiOpen) (61.00%) |
+| Closed-source Methods | [MemoraX](https://www.memoraxai.com/) (68.00%) | [atlas-harness](https://haizhi.com/) (63.00%) | Mem-Pro (62.67%) |
+| Commercial Products | [MemoraX](https://www.memoraxai.com/) (68.00%) | [atlas-harness](https://haizhi.com/) (63.00%) | [Taiyi Lianshan](https://gga.chat/) (59.00%) |
+
+### Multimodal Memory
+
+<p align="center">
+  <img src="assets/multimodal-memory-cycle-2-open-source.png" alt="Multimodal Memory, open-source winner · Khipu(结绳)" width="32%">
+  <img src="assets/multimodal-memory-cycle-2-closed-source.png" alt="Multimodal Memory, closed-source winner · MemoraX" width="32%">
+  <img src="assets/multimodal-memory-cycle-2-commercial.png" alt="Multimodal Memory, commercial winner · MemoraX" width="32%">
+</p>
+
+| Leaderboard | 🥇 First Place | 🥈 Second Place | 🥉 Third Place |
+| --- | --- | --- | --- |
+| Open-source Methods | [Khipu (结绳)](https://github.com/Lv999APTITUDE/khipu) (43.26) | [starwingMem](https://github.com/seuclkzsd/starwingMem) (42.62) | [Multimodal-RAW-RAG-AML](https://github.com/tujiahuanyu/Multimodal-raw-rag-aml) (42.17) |
+| Closed-source Methods | [MemoraX](https://www.memoraxai.com/) (53.68) | LinkMem (49.85) | memorysum-vl (42.35) |
+| Commercial Products | [MemoraX](https://www.memoraxai.com/) (53.68) | memorysum-vl (42.35) | [MemBraince](https://membraince.com/) (36.60) |
 
 ## 🏅 Inaugural Agent Memory Challenge 2026
 
@@ -58,7 +96,7 @@ The tables below show the top three ranks in the Open-source Methods and Commerc
 
 | Division | 🥇 First | 🥈 Second | 🥉 Third |
 | --- | --- | --- | --- |
-| Open-source methods | [AM-Link](https://github.com/Graygoo7529/AM-L) (52.67%)<br>[AMC-Memory](https://github.com/cxy935/AMC-Memo) (52.67%)<br>[aml-memory-baseline](https://github.com/richrichgo/aml-memory-ba) (52.67%)<br>[aml-memory-mvp](https://github.com/0xboyu/aml-memory-mvp) (52.67%)<br>[causal-memory](https://github.com/JingxuanC/causal-memory) (52.67%)<br>[Hybrid Episodic Memory](https://github.com/tlysanhuo/agent-memory-challenge) (52.67%)<br>[Memoria_v2](https://github.com/lin-guan/aml-rag-v2) (52.67%)<br>[nano-memory_chris](https://github.com/himalalps/nano-memory) (52.67%) | — | — |
+| Open-source methods | [AM-Link](https://github.com/Graygoo7529/AM-Link) (52.67%)<br>[AMC-Memory](https://github.com/cxy935/AMC-Memory) (52.67%)<br>[aml-memory-baseline](https://github.com/richrichgo/aml-memory-baseline) (52.67%)<br>[aml-memory-mvp](https://github.com/0xboyu/aml-memory-mvp) (52.67%)<br>[causal-memory](https://github.com/JingxuanC/causal-memory) (52.67%)<br>[Hybrid Episodic Memory](https://github.com/tlysanhuo/agent-memory-challenge) (52.67%)<br>[Memoria_v2](https://github.com/lin-guan/aml-rag-v2) (52.67%)<br>[nano-memory_chris](https://github.com/himalalps/nano-memory) (52.67%) | — | — |
 | Commercial products | [MemoraX v0.5](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json) (62.00%) | [claude-mem v12.1.1](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json) (52.00%)<br>[hs v3](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json) (52.00%)<br>[MemOS v2.0.1](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard/blob/d01a32165aef2124b9732bd0fda7f79380b931dc/data/generated/code_leaderboard_data.json) (52.00%) | — |
 
 ## 🎯 Why AML
